@@ -1,0 +1,139 @@
+{
+  "session": "ses_dec9fac81ffeozNTaRiPRS4rtU",
+  "title": "Italy solar tender trends",
+  "exported_at": "2026-11-25T16:52:20.945876+00:00",
+  "note": "Transcript of user and assistant messages only; system updates and internal reasoning omitted.",
+  "messages": [
+    {
+      "role": "user",
+      "content": "you have cleaned parquet dataset on public tenders in Europe for solar. Filter it by Italy as the buyer country and surface any insights and trends. You can use the AGENTS and the docs/ as context "
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        "shell",
+        "read"
+      ]
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        "read",
+        "read",
+        "read",
+        "read",
+        "read",
+        "read"
+      ]
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        "read",
+        "read",
+        "read",
+        "read"
+      ]
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        "shell"
+      ]
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        "shell"
+      ]
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        "shell"
+      ]
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        "shell"
+      ]
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        "shell"
+      ]
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        "shell"
+      ]
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        "shell"
+      ]
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        "shell"
+      ]
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        "write"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Done. Here's what the cleaned dataset shows for **Italy** (`Buyer Country == \"IT\"`).\n\n## Scale\n- **66 rows** → **59 unique awards**, **47 contracts/notices**, **44 buyers**, **44 contractors** (3 rows have no contractor). `Source Country` matches `Buyer Country` = IT for every row, so no provenance mismatch.\n\n## The headline trend: two waves, with a silent gap\nItalian public-body solar in TED is **bimodal**, and it tracks policy cycles:\n\n| Era | Years | Awards | Awarded value | Character |\n|---|---|---|---|---|\n| **Conto Energia era** | 2011–2015 (+1 in 2017) | ~40 | **~€34.8m** | municipality/utility-led single PV plants |\n| **gap** | 2016, 2018–2021 | ~0 | — | near-total absence |\n| **post-crisis / PNRR era** | 2022–2026 | ~18 | **~€18.4m** | central-purchasing-body framework agreements + EPC |\n\n- The **2011–2015 boom** (€29m in 2011 alone) was led by *Comune di* municipalities, provinces and utilities — large single plants, several project-finance \"concessioni\" — right at the tail of the *Conto Energia* feed-in tariff (ended July 2013).\n- The **2016–2021 gap** is almost total (one straggler in 2017), matching the end of the tariff with no successor.\n- The **2022–2026 revival** is led not by individual towns but by a **central purchasing body, Consorzio CEV** (Veneto), which in 2023 let two framework agreements — one supply+install (~€2.7m), one **Energy Performance Contract** (~€8.1m) — worth **~€10.8m combined**, each to a single joint venture (EXPOFIN SRL + S.V.E.T.).\n\n## Other patterns worth noting\n- **Almost fully competitive**: 91% open procedure, **zero direct awards** (`neg-wo-call`). Median 2 bidders, but a tail of highly contested tenders (Trentino trasporti 31, Calabria beni culturali 25).\n- **Low EU funding (~20%)** vs ~61% across the whole dataset — most Italian solar is self-funded; the EU-funded awards cluster in 2013 (FESR 2007–2013, South Tyrol/Sardinia).\n- **Supplies dominate** (49/66): Italy mostly *buys panels* (CPV `09331200` ×31) rather than \"solar energy\" as a service.\n- **Top buyers**: Consorzio CEV (~€10.8m), Provincia di Modena (€4.2m), Trentino trasporti (€3.5m), ASL Cagliari (~€1.9m across 6 lots).\n\n## Caveats I'm holding (not silently fixing)\n- **16 of 59 awards have no published value**; totals are award-level, never row-level (the file is exploded award×contractor).\n- One Cagliari award is mislabelled **CYP** (clearly EUR, €384k); Bozen's SS 12 project appears in **German + Italian as two IDs** with identical €564k (likely a bilingual duplicate); one award reports an implausible **98 tenders**.\n- TED under-covers below-threshold municipal jobs, so this is a **TED-visible** trend, not a census.\n\nI've written this up in `docs/agent-notes/italy-insights.md`. \n\nA natural next step (when you're ready) would be to turn the **two-wave / Conto-Energia→PNRR** story into a visualisation in `news-output/` — want me to sketch that?"
+    },
+    {
+      "role": "user",
+      "content": "can you look at trends for Sardinia specifically? and look at numbers of contracts, not just values"
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        "shell"
+      ]
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        "shell"
+      ]
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        "shell"
+      ]
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        "shell"
+      ]
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        "edit"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Here's the Sardinia drill-down (filtered on `Contract Nuts Code` starting `ITG2*` — i.e. where the work is *performed* in Sardinia). The headline is that it's a **very thin slice: just 3 contracts in the whole dataset**.\n\n## Counts first (as requested)\n| | Count |\n|---|---|\n| **Contracts** (unique Doc ID) | **3** |\n| Awards (award lines) | 8 |\n| Buyers | 3 |\n| Contractors | 3 |\n| Rows | 8 (no multi-contractor duplication) |\n\nAll 8 rows are **supplies** and **open** procedure, and none record a `Lot Number` (even the one that is explicitly six lots).\n\n## The three contracts\n| Year | Buyer | Awards | Value | Bidders | Contractor (HQ) | EU-funded |\n|---|---|---|---|---|---|---|\n| 2011 | Comune di Terralba | 1 | €361,528 | 5 | ATI Casu Antonino (Guspini, Sardinia) | no |\n| 2011 | Regione Sardegna | 1 | €1,785,664 | 12 | TEPOR SpA (Cagliari, Sardinia) | no |\n| 2013 | ASL Cagliari | **6 lots** | ~€1.89m | 2 / lot | Sunerg Solar Srl (Umbria) | yes (FESR) |\n\n- **Terralba** — design + supply + install of 5 PV plants on municipal-building roofs.\n- **Regione Sardegna** — a roof-top PV plant on the regional vocational-training centre (ex Cisapi), via Caravaggio, Cagliari.\n- **ASL Cagliari** — one tender explicitly for *\"six lots, separately awarded\"* of PV + thermal panels for the health authority's hospitals (the visible lot is \"P.O. Binaghi\").\n\n## The trend\n- **2011 × 2, 2013 × 1, then nothing — zero Sardinian solar awards in TED since 2013.** This is a *harder* stop than the national picture: Italy as a whole revives in 2022–2026, but Sardinia does not reappear.\n- **Local vs. outside**: 2 of 3 contracts went to Sardinian firms (TEPOR, Casu Antonino); the largest — the six-lot hospital supply — went to **Sunerg Solar Srl**, based in Umbria, not Sardinia.\n- **Competition was healthy where it's recorded**: 12 bidders for the region's roof plant, 5 for Terralba, 2 per lot for the hospital panels.\n- **EU funding** appears only on the 2013 ASL contract (FESR); the two 2011 contracts were self-funded.\n\n## Caveat (same as before)\nTED only reliably covers above-threshold notices, so \"nothing since 2013\" is a *TED-visible* absence — small municipal solar jobs in Sardinia would live on national/regional portals, not here. So this is about **what TED shows**, not a claim that Sardinian public bodies stopped buying solar.\n\nI've added a \"Sardinia (drill-down)\" section to `docs/agent-notes/italy-insights.md`.\n\nA possible angle if you want to go further: the six-lot **ASL Cagliari** tender (2013, FESR-funded, awarded to an Umbrian supplier) is the only multi-lot, EU-funded hospital solar contract in the whole Italian subset — a concrete \"small story\" candidate for the visualisation. Want me to pursue that?"
+    },
+    {
+      "role": "user",
+      "content": "let's stop here and commit the research notes for now, then use the relevant script in scripts/ to store this conversation as json"
+    }
+  ]
+}
