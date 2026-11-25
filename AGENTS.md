@@ -5,7 +5,7 @@ Research the solar market in Europe (or a chosen country) and find a small story
 Deliverables:
 - a short paragraph about a small story of solar adoption by public bodies — the story may be user-provided, and the paragraph should only be written if the user asks
 - a data visualisation about that story (in `news-output/`)
-- a record of the conversation with the agent (in `agent-chats/`)
+- a record of the conversation with the agent (in `agent-chats/`) — backed up only when the user requests it, not kept as an ongoing log
 - a GitHub repository containing the above (submitted as a link)
 
 Scope: to be defined during research (record decisions + uncertainties as they arise).
@@ -20,7 +20,7 @@ docs/                 = the Obsidian folder (notes, research summaries, reports)
   agent-notes/        = the agent's own notes and automated output
     sources.md        = running log of every data source (URL, publisher, access date)
     uncertainties.md  = what was uncertain/unclear during the process
-agent-chats/          = (deliverable) records of the conversation with the agent
+agent-chats/          = (deliverable) records of the conversation with the agent — saved only on user request, not an ongoing log
 data/                 = research data — datasets and files the agent collects during research
 scripts/              = code (analysis, data cleaning, packaging)
   tests/              = pytest tests
