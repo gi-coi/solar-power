@@ -191,6 +191,11 @@ def main() -> None:
     fund_award, comp_award = make_share_tables(awards)
     fund_notice, comp_notice = make_share_tables(notices)
 
+    # EU-27-scoped frames for the overall headline (the per-country tables are
+    # already EU-27; the headline must match that scope, not all countries).
+    eu27_awards = awards[awards["Buyer Country"].map(canonical_country).isin(EU27)]
+    eu27_notices = notices[notices["Buyer Country"].map(canonical_country).isin(EU27)]
+
     # ---------------------------------------------------------------- comparison
     def max_abs_diff(a: pd.DataFrame, b: pd.DataFrame, col: str) -> float:
         d = (a[col] - b[col]).abs()
@@ -276,11 +281,11 @@ def main() -> None:
     add("- **Country uniqueness:** no notice and no award spans more than one "
         "buyer country — **confirmed**, so the level de-duplications are "
         "unambiguous.")
-    add(f"- **Notice vs award level are NOT identical.** EU-funding share: "
-        f"**{overall_pct(notices, 'eu'):.1f}%** (notice) vs "
-        f"**{overall_pct(awards, 'eu'):.1f}%** (award); competitive share: "
-        f"**{overall_pct(notices, 'comp'):.1f}%** (notice) vs "
-        f"**{overall_pct(awards, 'comp'):.1f}%** (award). Max per-country gap: "
+    add(f"- **Notice vs award level are NOT identical (EU-27).** EU-funding share: "
+        f"**{overall_pct(eu27_notices, 'eu'):.1f}%** (notice) vs "
+        f"**{overall_pct(eu27_awards, 'eu'):.1f}%** (award); competitive share: "
+        f"**{overall_pct(eu27_notices, 'comp'):.1f}%** (notice) vs "
+        f"**{overall_pct(eu27_awards, 'comp'):.1f}%** (award). Max per-country gap: "
         f"{eu_max_diff:.1f} pp (EU funding), {comp_max_diff:.1f} pp (competition).")
     add(f"  - **Why:** EU-funded notices average {apc_true:.2f} awards per notice "
         f"vs {apc_false:.2f} for non-EU-funded ones, so the award-level EU share "
@@ -468,10 +473,10 @@ def main() -> None:
     for v in proc_values:
         print(f"  {v:<12} -> {proc_mapping[v]}")
     print()
-    print(f"overall EU-funded share: notice {overall_pct(notices, 'eu'):.1f}% | "
-          f"award {overall_pct(awards, 'eu'):.1f}%")
-    print(f"overall competitive share: notice {overall_pct(notices, 'comp'):.1f}% | "
-          f"award {overall_pct(awards, 'comp'):.1f}%")
+    print(f"overall EU-funded share (EU-27): notice {overall_pct(eu27_notices, 'eu'):.1f}% | "
+          f"award {overall_pct(eu27_awards, 'eu'):.1f}%")
+    print(f"overall competitive share (EU-27): notice {overall_pct(eu27_notices, 'comp'):.1f}% | "
+          f"award {overall_pct(eu27_awards, 'comp'):.1f}%")
     print()
     print("EU-funding share by country (EU-27) — notice level (primary):")
     print(fund_notice.assign(eu_pct=pct_col(fund_notice, "eu_pct")).to_string(index=False))

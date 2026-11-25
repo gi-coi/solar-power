@@ -20,7 +20,7 @@ Both flags (`Eu Funded`, `Procedure Type Code`) are **notice-level** fields: the
 
 - **Flag uniqueness:** every `Contract ID` and every `Award ID` has exactly one `Eu Funded` value and exactly one `Procedure Type Code` value — **confirmed** (0 conflicts).
 - **Country uniqueness:** no notice and no award spans more than one buyer country — **confirmed**, so the level de-duplications are unambiguous.
-- **Notice vs award level are NOT identical.** EU-funding share: **58.9%** (notice) vs **59.8%** (award); competitive share: **96.5%** (notice) vs **96.6%** (award). Max per-country gap: 35.3 pp (EU funding), 21.0 pp (competition).
+- **Notice vs award level are NOT identical (EU-27).** EU-funding share: **60.7%** (notice) vs **61.9%** (award); competitive share: **96.5%** (notice) vs **96.5%** (award). Max per-country gap: 35.3 pp (EU funding), 21.0 pp (competition).
   - **Why:** EU-funded notices average 1.52 awards per notice vs 1.46 for non-EU-funded ones, so the award-level EU share runs slightly higher. This is the reason award level is secondary.
 
 ## Distinct `Procedure Type Code` values → bucket
