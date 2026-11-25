@@ -1,15 +1,14 @@
 # Python
 __pycache__/
 *.py[cod]
-.pytest_cache/
-
-# uv / virtual environments
+*.egg-info/
 .venv/
 venv/
+.uv/
 
 # Environment / secrets
 .env
 .env.*
 
-# OS
+# macOS
 .DS_Store
