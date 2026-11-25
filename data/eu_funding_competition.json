@@ -1,0 +1,1127 @@
+{
+  "meta": {
+    "title": "EU-funded and competitive tenders by EU country (EU-27)",
+    "generated": "2026-11-25",
+    "source": "data/solar_power_clean.parquet",
+    "scope": "EU-27",
+    "primary_measure": "notice",
+    "secondary_measure": "award",
+    "levels": {
+      "notice": "one row per Contract ID (= Doc ID, the TED notice)",
+      "award": "one row per Award ID (each lot/award within a notice)"
+    },
+    "eu_funded_definition": "Eu Funded == 'true' (buyer self-declaration, TED BT-60 / B_EU_FUNDS)",
+    "competitive_codes": [
+      "comp-dial",
+      "comp-tend",
+      "neg-w-call",
+      "open",
+      "oth-mult",
+      "restricted"
+    ],
+    "noncompetitive_codes": [
+      "neg-wo-call",
+      "oth-single"
+    ],
+    "competitive_denominator": "competitive + noncompetitive; unknown excluded",
+    "greece_code_note": "Greece appears as 'GR' in the data; mapped to 'EL'.",
+    "non_eu_countries_excluded": [
+      "BO",
+      "CA",
+      "CD",
+      "CH",
+      "GB",
+      "KE",
+      "MK",
+      "MX",
+      "NO",
+      "RS",
+      "TR"
+    ]
+  },
+  "countries": [
+    {
+      "country": "AT",
+      "name": "Austria",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 0,
+          "non_eu_n": 8,
+          "total_n": 8,
+          "eu_pct": 0.0,
+          "non_eu_pct": 100.0
+        },
+        "award": {
+          "eu_n": 0,
+          "non_eu_n": 10,
+          "total_n": 10,
+          "eu_pct": 0.0,
+          "non_eu_pct": 100.0
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 8,
+          "noncompetitive_n": 0,
+          "unknown_n": 0,
+          "known_n": 8,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        },
+        "award": {
+          "competitive_n": 10,
+          "noncompetitive_n": 0,
+          "unknown_n": 0,
+          "known_n": 10,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        }
+      }
+    },
+    {
+      "country": "BE",
+      "name": "Belgium",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 4,
+          "non_eu_n": 40,
+          "total_n": 44,
+          "eu_pct": 9.1,
+          "non_eu_pct": 90.9
+        },
+        "award": {
+          "eu_n": 4,
+          "non_eu_n": 71,
+          "total_n": 75,
+          "eu_pct": 5.3,
+          "non_eu_pct": 94.7
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 43,
+          "noncompetitive_n": 1,
+          "unknown_n": 0,
+          "known_n": 44,
+          "competitive_pct": 97.7,
+          "noncompetitive_pct": 2.3
+        },
+        "award": {
+          "competitive_n": 74,
+          "noncompetitive_n": 1,
+          "unknown_n": 0,
+          "known_n": 75,
+          "competitive_pct": 98.7,
+          "noncompetitive_pct": 1.3
+        }
+      }
+    },
+    {
+      "country": "BG",
+      "name": "Bulgaria",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 27,
+          "non_eu_n": 4,
+          "total_n": 31,
+          "eu_pct": 87.1,
+          "non_eu_pct": 12.9
+        },
+        "award": {
+          "eu_n": 31,
+          "non_eu_n": 13,
+          "total_n": 44,
+          "eu_pct": 70.5,
+          "non_eu_pct": 29.5
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 25,
+          "noncompetitive_n": 3,
+          "unknown_n": 3,
+          "known_n": 28,
+          "competitive_pct": 89.3,
+          "noncompetitive_pct": 10.7
+        },
+        "award": {
+          "competitive_n": 28,
+          "noncompetitive_n": 13,
+          "unknown_n": 3,
+          "known_n": 41,
+          "competitive_pct": 68.3,
+          "noncompetitive_pct": 31.7
+        }
+      }
+    },
+    {
+      "country": "HR",
+      "name": "Croatia",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 5,
+          "non_eu_n": 18,
+          "total_n": 23,
+          "eu_pct": 21.7,
+          "non_eu_pct": 78.3
+        },
+        "award": {
+          "eu_n": 7,
+          "non_eu_n": 26,
+          "total_n": 33,
+          "eu_pct": 21.2,
+          "non_eu_pct": 78.8
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 14,
+          "noncompetitive_n": 0,
+          "unknown_n": 9,
+          "known_n": 14,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        },
+        "award": {
+          "competitive_n": 24,
+          "noncompetitive_n": 0,
+          "unknown_n": 9,
+          "known_n": 24,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        }
+      }
+    },
+    {
+      "country": "CY",
+      "name": "Cyprus",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 2,
+          "non_eu_n": 2,
+          "total_n": 4,
+          "eu_pct": 50.0,
+          "non_eu_pct": 50.0
+        },
+        "award": {
+          "eu_n": 2,
+          "non_eu_n": 2,
+          "total_n": 4,
+          "eu_pct": 50.0,
+          "non_eu_pct": 50.0
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 3,
+          "noncompetitive_n": 1,
+          "unknown_n": 0,
+          "known_n": 4,
+          "competitive_pct": 75.0,
+          "noncompetitive_pct": 25.0
+        },
+        "award": {
+          "competitive_n": 3,
+          "noncompetitive_n": 1,
+          "unknown_n": 0,
+          "known_n": 4,
+          "competitive_pct": 75.0,
+          "noncompetitive_pct": 25.0
+        }
+      }
+    },
+    {
+      "country": "CZ",
+      "name": "Czechia",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 444,
+          "non_eu_n": 118,
+          "total_n": 562,
+          "eu_pct": 79.0,
+          "non_eu_pct": 21.0
+        },
+        "award": {
+          "eu_n": 543,
+          "non_eu_n": 150,
+          "total_n": 693,
+          "eu_pct": 78.4,
+          "non_eu_pct": 21.6
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 456,
+          "noncompetitive_n": 29,
+          "unknown_n": 77,
+          "known_n": 485,
+          "competitive_pct": 94.0,
+          "noncompetitive_pct": 6.0
+        },
+        "award": {
+          "competitive_n": 566,
+          "noncompetitive_n": 33,
+          "unknown_n": 94,
+          "known_n": 599,
+          "competitive_pct": 94.5,
+          "noncompetitive_pct": 5.5
+        }
+      }
+    },
+    {
+      "country": "DK",
+      "name": "Denmark",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 1,
+          "non_eu_n": 22,
+          "total_n": 23,
+          "eu_pct": 4.3,
+          "non_eu_pct": 95.7
+        },
+        "award": {
+          "eu_n": 1,
+          "non_eu_n": 40,
+          "total_n": 41,
+          "eu_pct": 2.4,
+          "non_eu_pct": 97.6
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 22,
+          "noncompetitive_n": 1,
+          "unknown_n": 0,
+          "known_n": 23,
+          "competitive_pct": 95.7,
+          "noncompetitive_pct": 4.3
+        },
+        "award": {
+          "competitive_n": 40,
+          "noncompetitive_n": 1,
+          "unknown_n": 0,
+          "known_n": 41,
+          "competitive_pct": 97.6,
+          "noncompetitive_pct": 2.4
+        }
+      }
+    },
+    {
+      "country": "EE",
+      "name": "Estonia",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 0,
+          "non_eu_n": 8,
+          "total_n": 8,
+          "eu_pct": 0.0,
+          "non_eu_pct": 100.0
+        },
+        "award": {
+          "eu_n": 0,
+          "non_eu_n": 8,
+          "total_n": 8,
+          "eu_pct": 0.0,
+          "non_eu_pct": 100.0
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 8,
+          "noncompetitive_n": 0,
+          "unknown_n": 0,
+          "known_n": 8,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        },
+        "award": {
+          "competitive_n": 8,
+          "noncompetitive_n": 0,
+          "unknown_n": 0,
+          "known_n": 8,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        }
+      }
+    },
+    {
+      "country": "FI",
+      "name": "Finland",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 2,
+          "non_eu_n": 30,
+          "total_n": 32,
+          "eu_pct": 6.2,
+          "non_eu_pct": 93.8
+        },
+        "award": {
+          "eu_n": 2,
+          "non_eu_n": 30,
+          "total_n": 32,
+          "eu_pct": 6.2,
+          "non_eu_pct": 93.8
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 31,
+          "noncompetitive_n": 1,
+          "unknown_n": 0,
+          "known_n": 32,
+          "competitive_pct": 96.9,
+          "noncompetitive_pct": 3.1
+        },
+        "award": {
+          "competitive_n": 31,
+          "noncompetitive_n": 1,
+          "unknown_n": 0,
+          "known_n": 32,
+          "competitive_pct": 96.9,
+          "noncompetitive_pct": 3.1
+        }
+      }
+    },
+    {
+      "country": "FR",
+      "name": "France",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 4,
+          "non_eu_n": 61,
+          "total_n": 65,
+          "eu_pct": 6.2,
+          "non_eu_pct": 93.8
+        },
+        "award": {
+          "eu_n": 10,
+          "non_eu_n": 99,
+          "total_n": 109,
+          "eu_pct": 9.2,
+          "non_eu_pct": 90.8
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 61,
+          "noncompetitive_n": 4,
+          "unknown_n": 0,
+          "known_n": 65,
+          "competitive_pct": 93.8,
+          "noncompetitive_pct": 6.2
+        },
+        "award": {
+          "competitive_n": 105,
+          "noncompetitive_n": 4,
+          "unknown_n": 0,
+          "known_n": 109,
+          "competitive_pct": 96.3,
+          "noncompetitive_pct": 3.7
+        }
+      }
+    },
+    {
+      "country": "DE",
+      "name": "Germany",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 17,
+          "non_eu_n": 137,
+          "total_n": 154,
+          "eu_pct": 11.0,
+          "non_eu_pct": 89.0
+        },
+        "award": {
+          "eu_n": 46,
+          "non_eu_n": 196,
+          "total_n": 242,
+          "eu_pct": 19.0,
+          "non_eu_pct": 81.0
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 131,
+          "noncompetitive_n": 21,
+          "unknown_n": 2,
+          "known_n": 152,
+          "competitive_pct": 86.2,
+          "noncompetitive_pct": 13.8
+        },
+        "award": {
+          "competitive_n": 205,
+          "noncompetitive_n": 35,
+          "unknown_n": 2,
+          "known_n": 240,
+          "competitive_pct": 85.4,
+          "noncompetitive_pct": 14.6
+        }
+      }
+    },
+    {
+      "country": "EL",
+      "name": "Greece",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 12,
+          "non_eu_n": 33,
+          "total_n": 45,
+          "eu_pct": 26.7,
+          "non_eu_pct": 73.3
+        },
+        "award": {
+          "eu_n": 12,
+          "non_eu_n": 35,
+          "total_n": 47,
+          "eu_pct": 25.5,
+          "non_eu_pct": 74.5
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 41,
+          "noncompetitive_n": 0,
+          "unknown_n": 4,
+          "known_n": 41,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        },
+        "award": {
+          "competitive_n": 43,
+          "noncompetitive_n": 0,
+          "unknown_n": 4,
+          "known_n": 43,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        }
+      }
+    },
+    {
+      "country": "HU",
+      "name": "Hungary",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 5,
+          "non_eu_n": 7,
+          "total_n": 12,
+          "eu_pct": 41.7,
+          "non_eu_pct": 58.3
+        },
+        "award": {
+          "eu_n": 6,
+          "non_eu_n": 10,
+          "total_n": 16,
+          "eu_pct": 37.5,
+          "non_eu_pct": 62.5
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 10,
+          "noncompetitive_n": 1,
+          "unknown_n": 1,
+          "known_n": 11,
+          "competitive_pct": 90.9,
+          "noncompetitive_pct": 9.1
+        },
+        "award": {
+          "competitive_n": 13,
+          "noncompetitive_n": 2,
+          "unknown_n": 1,
+          "known_n": 15,
+          "competitive_pct": 86.7,
+          "noncompetitive_pct": 13.3
+        }
+      }
+    },
+    {
+      "country": "IE",
+      "name": "Ireland",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 1,
+          "non_eu_n": 2,
+          "total_n": 3,
+          "eu_pct": 33.3,
+          "non_eu_pct": 66.7
+        },
+        "award": {
+          "eu_n": 1,
+          "non_eu_n": 2,
+          "total_n": 3,
+          "eu_pct": 33.3,
+          "non_eu_pct": 66.7
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 3,
+          "noncompetitive_n": 0,
+          "unknown_n": 0,
+          "known_n": 3,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        },
+        "award": {
+          "competitive_n": 3,
+          "noncompetitive_n": 0,
+          "unknown_n": 0,
+          "known_n": 3,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        }
+      }
+    },
+    {
+      "country": "IT",
+      "name": "Italy",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 6,
+          "non_eu_n": 41,
+          "total_n": 47,
+          "eu_pct": 12.8,
+          "non_eu_pct": 87.2
+        },
+        "award": {
+          "eu_n": 12,
+          "non_eu_n": 47,
+          "total_n": 59,
+          "eu_pct": 20.3,
+          "non_eu_pct": 79.7
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 46,
+          "noncompetitive_n": 0,
+          "unknown_n": 1,
+          "known_n": 46,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        },
+        "award": {
+          "competitive_n": 58,
+          "noncompetitive_n": 0,
+          "unknown_n": 1,
+          "known_n": 58,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        }
+      }
+    },
+    {
+      "country": "LV",
+      "name": "Latvia",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 36,
+          "non_eu_n": 20,
+          "total_n": 56,
+          "eu_pct": 64.3,
+          "non_eu_pct": 35.7
+        },
+        "award": {
+          "eu_n": 68,
+          "non_eu_n": 23,
+          "total_n": 91,
+          "eu_pct": 74.7,
+          "non_eu_pct": 25.3
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 32,
+          "noncompetitive_n": 5,
+          "unknown_n": 19,
+          "known_n": 37,
+          "competitive_pct": 86.5,
+          "noncompetitive_pct": 13.5
+        },
+        "award": {
+          "competitive_n": 67,
+          "noncompetitive_n": 5,
+          "unknown_n": 19,
+          "known_n": 72,
+          "competitive_pct": 93.1,
+          "noncompetitive_pct": 6.9
+        }
+      }
+    },
+    {
+      "country": "LT",
+      "name": "Lithuania",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 8,
+          "non_eu_n": 9,
+          "total_n": 17,
+          "eu_pct": 47.1,
+          "non_eu_pct": 52.9
+        },
+        "award": {
+          "eu_n": 42,
+          "non_eu_n": 9,
+          "total_n": 51,
+          "eu_pct": 82.4,
+          "non_eu_pct": 17.6
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 17,
+          "noncompetitive_n": 0,
+          "unknown_n": 0,
+          "known_n": 17,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        },
+        "award": {
+          "competitive_n": 51,
+          "noncompetitive_n": 0,
+          "unknown_n": 0,
+          "known_n": 51,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        }
+      }
+    },
+    {
+      "country": "LU",
+      "name": "Luxembourg",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 0,
+          "non_eu_n": 19,
+          "total_n": 19,
+          "eu_pct": 0.0,
+          "non_eu_pct": 100.0
+        },
+        "award": {
+          "eu_n": 0,
+          "non_eu_n": 38,
+          "total_n": 38,
+          "eu_pct": 0.0,
+          "non_eu_pct": 100.0
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 19,
+          "noncompetitive_n": 0,
+          "unknown_n": 0,
+          "known_n": 19,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        },
+        "award": {
+          "competitive_n": 38,
+          "noncompetitive_n": 0,
+          "unknown_n": 0,
+          "known_n": 38,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        }
+      }
+    },
+    {
+      "country": "MT",
+      "name": "Malta",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 7,
+          "non_eu_n": 7,
+          "total_n": 14,
+          "eu_pct": 50.0,
+          "non_eu_pct": 50.0
+        },
+        "award": {
+          "eu_n": 7,
+          "non_eu_n": 7,
+          "total_n": 14,
+          "eu_pct": 50.0,
+          "non_eu_pct": 50.0
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 14,
+          "noncompetitive_n": 0,
+          "unknown_n": 0,
+          "known_n": 14,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        },
+        "award": {
+          "competitive_n": 14,
+          "noncompetitive_n": 0,
+          "unknown_n": 0,
+          "known_n": 14,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        }
+      }
+    },
+    {
+      "country": "NL",
+      "name": "Netherlands",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 2,
+          "non_eu_n": 185,
+          "total_n": 187,
+          "eu_pct": 1.1,
+          "non_eu_pct": 98.9
+        },
+        "award": {
+          "eu_n": 2,
+          "non_eu_n": 250,
+          "total_n": 252,
+          "eu_pct": 0.8,
+          "non_eu_pct": 99.2
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 181,
+          "noncompetitive_n": 6,
+          "unknown_n": 0,
+          "known_n": 187,
+          "competitive_pct": 96.8,
+          "noncompetitive_pct": 3.2
+        },
+        "award": {
+          "competitive_n": 246,
+          "noncompetitive_n": 6,
+          "unknown_n": 0,
+          "known_n": 252,
+          "competitive_pct": 97.6,
+          "noncompetitive_pct": 2.4
+        }
+      }
+    },
+    {
+      "country": "PL",
+      "name": "Poland",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 1049,
+          "non_eu_n": 254,
+          "total_n": 1303,
+          "eu_pct": 80.5,
+          "non_eu_pct": 19.5
+        },
+        "award": {
+          "eu_n": 1531,
+          "non_eu_n": 386,
+          "total_n": 1917,
+          "eu_pct": 79.9,
+          "non_eu_pct": 20.1
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 1265,
+          "noncompetitive_n": 8,
+          "unknown_n": 30,
+          "known_n": 1273,
+          "competitive_pct": 99.4,
+          "noncompetitive_pct": 0.6
+        },
+        "award": {
+          "competitive_n": 1859,
+          "noncompetitive_n": 14,
+          "unknown_n": 44,
+          "known_n": 1873,
+          "competitive_pct": 99.3,
+          "noncompetitive_pct": 0.7
+        }
+      }
+    },
+    {
+      "country": "PT",
+      "name": "Portugal",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 17,
+          "non_eu_n": 12,
+          "total_n": 29,
+          "eu_pct": 58.6,
+          "non_eu_pct": 41.4
+        },
+        "award": {
+          "eu_n": 83,
+          "non_eu_n": 12,
+          "total_n": 95,
+          "eu_pct": 87.4,
+          "non_eu_pct": 12.6
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 26,
+          "noncompetitive_n": 0,
+          "unknown_n": 3,
+          "known_n": 26,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        },
+        "award": {
+          "competitive_n": 92,
+          "noncompetitive_n": 0,
+          "unknown_n": 3,
+          "known_n": 92,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        }
+      }
+    },
+    {
+      "country": "RO",
+      "name": "Romania",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 23,
+          "non_eu_n": 18,
+          "total_n": 41,
+          "eu_pct": 56.1,
+          "non_eu_pct": 43.9
+        },
+        "award": {
+          "eu_n": 28,
+          "non_eu_n": 25,
+          "total_n": 53,
+          "eu_pct": 52.8,
+          "non_eu_pct": 47.2
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 38,
+          "noncompetitive_n": 0,
+          "unknown_n": 3,
+          "known_n": 38,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        },
+        "award": {
+          "competitive_n": 50,
+          "noncompetitive_n": 0,
+          "unknown_n": 3,
+          "known_n": 50,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        }
+      }
+    },
+    {
+      "country": "SK",
+      "name": "Slovakia",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 9,
+          "non_eu_n": 3,
+          "total_n": 12,
+          "eu_pct": 75.0,
+          "non_eu_pct": 25.0
+        },
+        "award": {
+          "eu_n": 11,
+          "non_eu_n": 7,
+          "total_n": 18,
+          "eu_pct": 61.1,
+          "non_eu_pct": 38.9
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 11,
+          "noncompetitive_n": 1,
+          "unknown_n": 0,
+          "known_n": 12,
+          "competitive_pct": 91.7,
+          "noncompetitive_pct": 8.3
+        },
+        "award": {
+          "competitive_n": 17,
+          "noncompetitive_n": 1,
+          "unknown_n": 0,
+          "known_n": 18,
+          "competitive_pct": 94.4,
+          "noncompetitive_pct": 5.6
+        }
+      }
+    },
+    {
+      "country": "SI",
+      "name": "Slovenia",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 56,
+          "non_eu_n": 9,
+          "total_n": 65,
+          "eu_pct": 86.2,
+          "non_eu_pct": 13.8
+        },
+        "award": {
+          "eu_n": 134,
+          "non_eu_n": 9,
+          "total_n": 143,
+          "eu_pct": 93.7,
+          "non_eu_pct": 6.3
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 28,
+          "noncompetitive_n": 13,
+          "unknown_n": 24,
+          "known_n": 41,
+          "competitive_pct": 68.3,
+          "noncompetitive_pct": 31.7
+        },
+        "award": {
+          "competitive_n": 64,
+          "noncompetitive_n": 25,
+          "unknown_n": 54,
+          "known_n": 89,
+          "competitive_pct": 71.9,
+          "noncompetitive_pct": 28.1
+        }
+      }
+    },
+    {
+      "country": "ES",
+      "name": "Spain",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 93,
+          "non_eu_n": 107,
+          "total_n": 200,
+          "eu_pct": 46.5,
+          "non_eu_pct": 53.5
+        },
+        "award": {
+          "eu_n": 190,
+          "non_eu_n": 186,
+          "total_n": 376,
+          "eu_pct": 50.5,
+          "non_eu_pct": 49.5
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 179,
+          "noncompetitive_n": 5,
+          "unknown_n": 16,
+          "known_n": 184,
+          "competitive_pct": 97.3,
+          "noncompetitive_pct": 2.7
+        },
+        "award": {
+          "competitive_n": 311,
+          "noncompetitive_n": 6,
+          "unknown_n": 59,
+          "known_n": 317,
+          "competitive_pct": 98.1,
+          "noncompetitive_pct": 1.9
+        }
+      }
+    },
+    {
+      "country": "SE",
+      "name": "Sweden",
+      "eu_funded": {
+        "notice": {
+          "eu_n": 0,
+          "non_eu_n": 11,
+          "total_n": 11,
+          "eu_pct": 0.0,
+          "non_eu_pct": 100.0
+        },
+        "award": {
+          "eu_n": 0,
+          "non_eu_n": 16,
+          "total_n": 16,
+          "eu_pct": 0.0,
+          "non_eu_pct": 100.0
+        }
+      },
+      "competition": {
+        "notice": {
+          "competitive_n": 11,
+          "noncompetitive_n": 0,
+          "unknown_n": 0,
+          "known_n": 11,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        },
+        "award": {
+          "competitive_n": 16,
+          "noncompetitive_n": 0,
+          "unknown_n": 0,
+          "known_n": 16,
+          "competitive_pct": 100.0,
+          "noncompetitive_pct": 0.0
+        }
+      }
+    }
+  ],
+  "non_eu": [
+    {
+      "country": "BO",
+      "notice_n": 1,
+      "award_n": 2
+    },
+    {
+      "country": "CA",
+      "notice_n": 1,
+      "award_n": 1
+    },
+    {
+      "country": "CD",
+      "notice_n": 1,
+      "award_n": 2
+    },
+    {
+      "country": "CH",
+      "notice_n": 42,
+      "award_n": 42
+    },
+    {
+      "country": "GB",
+      "notice_n": 50,
+      "award_n": 127
+    },
+    {
+      "country": "KE",
+      "notice_n": 1,
+      "award_n": 1
+    },
+    {
+      "country": "MK",
+      "notice_n": 3,
+      "award_n": 3
+    },
+    {
+      "country": "MX",
+      "notice_n": 1,
+      "award_n": 1
+    },
+    {
+      "country": "NO",
+      "notice_n": 5,
+      "award_n": 6
+    },
+    {
+      "country": "RS",
+      "notice_n": 2,
+      "award_n": 2
+    },
+    {
+      "country": "TR",
+      "notice_n": 1,
+      "award_n": 1
+    }
+  ]
+}
