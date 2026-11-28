@@ -35,6 +35,18 @@ any figure is used in published output. "⚠️" in `sources.md` marks these.
 - ECA SR 09/2025 conclusion that the Commission "has not been able to draw
   sufficient assurance" on RRF procurement/state-aid compliance.
 
+### Verified against primary sources (2026-11-28)
+- **EPBD Art. 10 phasing for existing public buildings** — confirmed from
+  Directive (EU) 2024/1275 Art. 10(3)(b): >2,000 m² by 31 Dec 2027, >750 m² by
+  31 Dec 2028, >250 m² by 31 Dec 2030. (The "2028/2029/2031" figures are the
+  "applies-from" dates, not the legal deadlines.)
+- **Solar strategy targets** — confirmed from COM(2022) 221: >320 GW by 2025 and
+  ~600 GW by 2030 (AC); the Commission now cites "at least 700 GW" by 2030.
+- **REPowerEU financing** — confirmed: "close to €300 billion" mobilised with the
+  RRF "at the heart"; ~€26bn additional solar-PV investment 2022–2027; RRF
+  spending subject to DNSH (Reg. (EU) 2021/241 Art. 5) + state-aid/procurement
+  rules.
+
 ### Data/logistics ambiguities
 - Several sub-agent URLs are truncated (marked `…`) and need full canonical URLs
   before citing (ECA reports, Bruegel WP, ENTSO-E, Publications Office, OECD,

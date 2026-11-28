@@ -10,19 +10,26 @@ source log in `sources.md`; unresolved points in `uncertainties.md`.
 > primary sources but have **not been independently verified against EUR-Lex**
 > in this session. Treat any figure intended for publication as needing a
 > primary-source check first.
+>
+> ✅ **Section 1** was fact-checked against EUR-Lex primary sources on
+> 2026-11-28; the bullets below reflect the verified wording.
 
 ---
 
 ## 1. What drives public-body demand for solar
 
-- The **EU Solar Energy Strategy** (COM(2022) 221) set >320 GW of PV by 2025 and
-  ~600 GW by 2030 (now cited as ≥700 GW). Its **European Solar Rooftops
-  Initiative** proposed mandatory rooftop solar on new public/commercial
-  buildings.
+- The **EU Solar Energy Strategy** (COM(2022) 221) set >320 GW of solar PV by 2025
+  and ~600 GW by 2030 (alternating-current figures; the Commission now cites "at
+  least 700 GW" by 2030). Its **European Solar Rooftops Initiative** proposed
+  making rooftop solar compulsory on new public and commercial buildings
+  (>250 m², by 2026), existing public and commercial buildings (>250 m², by
+  2027), and new residential buildings (by 2029).
 - Those obligations were legislated in the recast **Energy Performance of
-  Buildings Directive (EPBD, 2024)**, Art. 10 — the "EU Solar Standard" — phasing
-  in rooftop solar on existing public buildings (schools, hospitals, offices)
-  by size from 2028 to 2031.
+  Buildings Directive (EPBD, 2024)**, Art. 10 "Solar energy in buildings" (the
+  so-called "EU Solar Standard"). It phases in rooftop solar on existing public
+  buildings (schools, hospitals, offices) by size — where technically,
+  economically and functionally feasible — >2,000 m² by end-2027, >750 m² by
+  end-2028, and >250 m² by end-2030.
 - **REPowerEU / the Recovery & Resilience Facility** are the main public money:
   RRF is "at the heart" of REPowerEU (~€300bn mobilised), with ~€26bn of
   additional solar-PV investment (2022–2027) estimated. RRF spending is subject

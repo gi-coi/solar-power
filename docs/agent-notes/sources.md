@@ -91,4 +91,7 @@ Running log of every data source used — URL, publisher, access date, and what 
 | 80 | Procedure type | https://docs.ted.europa.eu/eforms/latest/schema/procedure-lot-part-information.html | Publications Office of the EU (TED eForms SDK) | BT-105 "Procedure Type" definition — procedure-level, cardinality 1, `cbc:ProcedureCode`; per-notice-subtype procedure-type tables |
 | 81 | Procedure type | https://docs.peppol.eu/pracc/transactions/T011/index.html | OpenPEPPOL (Pre-Award) | Confirms the procedure-type listID is the EU Publications Office authority table `procurement-procedure-type` (Issuer: Publications Office); T011 `ProcedureType` search slot |
 
-> Access date for entries **#78–#81**: **2026-11-28** (entries #1–#77 above: 2026-11-25).
+| 82 | EPBD recast text | https://eur-lex.europa.eu/eli/dir/2024/1275/oj/eng | European Commission (EUR-Lex) | Directive (EU) 2024/1275 Art. 10 "Solar energy in buildings" — exact thresholds/deadlines (existing public buildings >2,000/>750/>250 m² by end-2027/2028/2030) |
+| 83 | RRF Regulation | https://eur-lex.europa.eu/eli/reg/2021/241/oj/eng | European Commission (EUR-Lex) | Regulation (EU) 2021/241 — DNSH (Art. 5 + horizontal principles); state-aid & public-procurement compliance obligation |
+
+> Access date for entries **#78–#83**: **2026-11-28** (entries #1–#77 above: 2026-11-25).
