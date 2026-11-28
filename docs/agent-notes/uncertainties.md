@@ -56,7 +56,8 @@ any figure is used in published output. "⚠️" in `sources.md` marks these.
 
 Computed by `scripts/eu_funding_competition.py`.
 
-- **(a) Unknown procedure type:** `Procedure Type Code` is missing on 324 rows (~6.5%), corresponding to 302 distinct awards (194 notices; the extra rows are multi-contractor awards). These are excluded from the competitive/non-competitive denominator but reported per country.
+- **(a) Unknown procedure type:** excluded from the competitive/non-competitive denominator but reported per country — includes the 324 rows with a missing code (302 distinct awards / 194 notices) plus the rows coded `oth-single`/`oth-mult` (undefined in the codelist).
 - **(b) Non-EU countries excluded from the EU-27 scope:** BO, CA, CD, CH, GB, KE, MK, MX, NO, RS, TR are present in the data and excluded from the EU-27 share tables (counts reported separately).
 - **(c) "EU funded" is a buyer self-declaration** (TED field `BT-60`), not a verified funding record.
 - **(d) Primary unit = the notice** (de-duplicated on `Contract ID`), with the award level kept as a secondary/sensitivity measure. **Reason:** both flags are notice-level, so we cannot prove an individual award is genuinely EU-funded rather than merely inheriting the flag from its parent notice — counting awards would risk overstating EU funding for multi-lot frameworks (e.g. GB: 50 notices but 127 awards). Award-level figures are reported alongside for transparency but are not the headline.
+- **(e) `oth-single`/`oth-mult` reclassified to unknown (2026-11-28).** The `procurement-procedure-type` codelist gives these two codes no definition, so rather than guess competitive vs non-competitive we exclude them from the split. Competitive is now `open`/`restricted`/`neg-w-call`/`comp-dial`/`comp-tend`; non-competitive is `neg-wo-call` only.

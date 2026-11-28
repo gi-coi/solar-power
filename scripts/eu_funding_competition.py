@@ -26,8 +26,9 @@ Method:
 - **EU-funded share** = (``Eu Funded == 'true'``) / (non-missing ``Eu Funded``).
   ``Eu Funded`` is fully populated (no NaN).
 - **Competitive vs non-competitive** (see ``COMPETITIVE`` / ``NONCOMPETITIVE``).
-  ``NaN``/unknown procedure types are **excluded from the denominator** but
-  reported per country as an unknown count.
+  ``NaN``/unknown procedure types **and** the undefined codes
+  ``oth-single``/``oth-mult`` (no codelist definition) are **excluded from the
+  denominator** but reported per country as an unknown count.
 - **Country scope = EU-27** only. Greece is recorded as ``GR`` in the data and
   mapped to the EU-27 code ``EL``. Non-EU countries are listed separately.
 
@@ -61,8 +62,20 @@ EU27 = [
 # Greece appears as "GR" in the data (never "EL"); map it to the EU-27 code.
 COUNTRY_ALIAS = {"GR": "EL"}
 
-COMPETITIVE = {"open", "restricted", "neg-w-call", "comp-dial", "comp-tend", "oth-mult"}
-NONCOMPETITIVE = {"neg-wo-call", "oth-single"}
+# Competitive = procedures with a prior call for competition.
+COMPETITIVE = {"open", "restricted", "neg-w-call", "comp-dial", "comp-tend"}
+# Direct award — negotiated WITHOUT a prior call for competition.
+NONCOMPETITIVE = {"neg-wo-call"}
+# Codes deliberately treated as "unknown" (excluded from the competitive split):
+# the codelist gives no definition for them, so we do not guess (see
+# ted-fields-reference.md §4). Any other code is also unknown by default.
+UNDEFINED_CODES = {"oth-single", "oth-mult"}
+# The full authoritative codelist (10 codes) — used to assert nothing genuinely
+# unexpected appears in the data.
+KNOWN_PROCEDURE_CODES = {
+    "open", "restricted", "neg-w-call", "neg-wo-call", "comp-dial", "comp-tend",
+    "innovation", "oth-single", "oth-mult", "exp-int-rail",
+}
 
 COUNTRY_NAMES = {
     "AT": "Austria", "BE": "Belgium", "BG": "Bulgaria", "HR": "Croatia",
@@ -181,8 +194,11 @@ def main() -> None:
     # ------------------------------------------------------ distinct procedure codes
     proc_values = sorted(df["Procedure Type Code"].dropna().unique().tolist())
     proc_mapping = {v: bucket_of(v) for v in proc_values}
-    uncovered = [v for v in proc_values if bucket_of(v) == "unknown"]
-    assert not uncovered, f"unexpected procedure codes not bucketed: {uncovered}"
+    # Every code in the data must be a KNOWN codelist code. `oth-single`/`oth-mult`
+    # are known but deliberately classified "unknown" (undefined in the codelist),
+    # so they are NOT an error — only codes outside the codelist would be.
+    truly_unexpected = [v for v in proc_values if v not in KNOWN_PROCEDURE_CODES]
+    assert not truly_unexpected, f"procedure codes outside the codelist: {truly_unexpected}"
 
     # ------------------------------------------------------ dedup at both levels
     awards = df.drop_duplicates(subset="Award ID").reset_index(drop=True)
@@ -267,8 +283,9 @@ def main() -> None:
     add("- **EU-funded** = `Eu Funded == 'true'`; denominator = non-missing "
         "`Eu Funded` (none missing). Non-EU-funded = `Eu Funded == 'false'`.")
     add("- **Competitive / non-competitive** mapping (see table below); "
-        "**unknown** (`NaN`/empty or any other code) is excluded from the "
-        "denominator but reported per country as an unknown count.")
+        "**unknown** (`NaN`/empty, or the undefined codes `oth-single`/`oth-mult`) "
+        "is excluded from the denominator but reported per country as an unknown "
+        "count.")
     add("- **Country scope = EU-27 only.** Greece is recorded as `GR` in the data "
         "and mapped to the EU-27 code `EL`. Non-EU countries are listed "
         "separately at the end, not silently dropped.")
@@ -298,8 +315,10 @@ def main() -> None:
     for v in proc_values:
         add(f"| `{v}` | {proc_mapping[v]} |")
     add()
-    add("No procedure code in the data falls outside the competitive/"
-        "non-competitive lists, so nothing is silently mis-bucketed.")
+    add("`oth-single` and `oth-mult` are deliberately classified **unknown** — the "
+        "codelist gives them no definition, so we exclude them from the "
+        "competitive/non-competitive split rather than guess. Every code in the "
+        "data is a known codelist code.")
     add()
 
     # -------- primary (notice) tables
@@ -349,12 +368,16 @@ def main() -> None:
          "Competitive %", "Non-competitive %"],
     ))
     add()
-    add(f"**Unknown procedure type:** {int(comp_award['unknown_n'].sum())} awards "
-        f"({int(comp_notice['unknown_n'].sum())} notices) across the EU-27 — the "
-        f"{int(df['Procedure Type Code'].isna().sum())} NaN rows correspond to "
-        f"{int(df.loc[df['Procedure Type Code'].isna(), 'Award ID'].nunique())} distinct "
-        "awards and "
-        f"{int(df.loc[df['Procedure Type Code'].isna(), 'Contract ID'].nunique())} distinct notices.")
+    nan_awards = int(df.loc[df["Procedure Type Code"].isna(), "Award ID"].nunique())
+    nan_notices = int(df.loc[df["Procedure Type Code"].isna(), "Contract ID"].nunique())
+    undef_awards = int(awards["Procedure Type Code"].isin(UNDEFINED_CODES).sum())
+    undef_notices = int(notices["Procedure Type Code"].isin(UNDEFINED_CODES).sum())
+    add(f"**Unknown procedure type** (excluded from the competitive denominator): "
+        f"{int(comp_award['unknown_n'].sum())} awards / "
+        f"{int(comp_notice['unknown_n'].sum())} notices across the EU-27 = "
+        f"{nan_awards} awards / {nan_notices} notices with a missing code + "
+        f"{undef_awards} awards / {undef_notices} notices coded "
+        "`oth-single`/`oth-mult` (undefined in the codelist).")
     add()
     add("## Non-EU countries present in the data (excluded from EU-27 shares)")
     add()
@@ -423,7 +446,8 @@ def main() -> None:
             "eu_funded_definition": "Eu Funded == 'true' (buyer self-declaration, TED BT-60 / B_EU_FUNDS)",
             "competitive_codes": sorted(COMPETITIVE),
             "noncompetitive_codes": sorted(NONCOMPETITIVE),
-            "competitive_denominator": "competitive + noncompetitive; unknown excluded",
+            "unknown_codes": sorted(UNDEFINED_CODES),
+            "competitive_denominator": "competitive + noncompetitive; unknown (NaN and undefined codes oth-single/oth-mult) excluded",
             "greece_code_note": "Greece appears as 'GR' in the data; mapped to 'EL'.",
             "non_eu_countries_excluded": all_non_eu,
         },
@@ -444,12 +468,10 @@ def main() -> None:
     section = (
         "\n\n## EU funding & competition shares (2026-11-25)\n\n"
         "Computed by `scripts/eu_funding_competition.py`.\n\n"
-        "- **(a) Unknown procedure type:** `Procedure Type Code` is missing on "
-        f"{int(df['Procedure Type Code'].isna().sum())} rows, corresponding to "
-        f"{int(df.loc[df['Procedure Type Code'].isna(), 'Award ID'].nunique())} distinct awards "
-        f"({int(df.loc[df['Procedure Type Code'].isna(), 'Contract ID'].nunique())} notices). "
-        "These are excluded from the competitive/non-competitive denominator but "
-        "reported per country.\n"
+        "- **(a) Unknown procedure type:** excluded from the competitive/"
+        "non-competitive denominator but reported per country. Includes both the "
+        f"{int(df['Procedure Type Code'].isna().sum())} rows with a missing code "
+        "and the rows coded `oth-single`/`oth-mult` (undefined in the codelist).\n"
         "- **(b) Non-EU countries excluded from the EU-27 scope:** "
         f"{', '.join(all_non_eu)} are present in the data and excluded from the "
         "EU-27 share tables (counts reported separately).\n"
@@ -462,6 +484,12 @@ def main() -> None:
         "notice — counting awards would risk overstating EU funding for "
         "multi-lot frameworks. Award-level figures are reported alongside for "
         "transparency but are not the headline.\n"
+        "- **(e) `oth-single`/`oth-mult` reclassified to unknown (2026-11-28).** "
+        "The `procurement-procedure-type` codelist gives these two codes no "
+        "definition, so rather than guess competitive vs non-competitive we "
+        "exclude them from the split. The competitive bucket is now "
+        "`open`/`restricted`/`neg-w-call`/`comp-dial`/`comp-tend` and the "
+        "non-competitive bucket is `neg-wo-call` only.\n"
     )
     existing = UNCERTAINTIES.read_text(encoding="utf-8") if UNCERTAINTIES.exists() else ""
     if "## EU funding & competition shares (2026-11-25)" not in existing:

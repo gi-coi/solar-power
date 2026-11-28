@@ -169,18 +169,19 @@ def test_money_values_unchanged_by_cleaning():
 # 2. Unit tests — procedure classification & country canonicalisation
 # ---------------------------------------------------------------------------
 @pytest.mark.parametrize("code", ["open", "restricted", "neg-w-call",
-                                  "comp-dial", "comp-tend", "oth-mult"])
+                                  "comp-dial", "comp-tend"])
 def test_bucket_of_competitive(code):
     assert efc.bucket_of(code) == "competitive"
 
 
-@pytest.mark.parametrize("code", ["neg-wo-call", "oth-single"])
+@pytest.mark.parametrize("code", ["neg-wo-call"])
 def test_bucket_of_noncompetitive(code):
     assert efc.bucket_of(code) == "non-competitive"
 
 
 @pytest.mark.parametrize("code", [None, float("nan"), "", "  ", "innovation",
-                                  "exp-int-rail", "garbage"])
+                                  "exp-int-rail", "oth-single", "oth-mult",
+                                  "garbage"])
 def test_bucket_of_unknown(code):
     assert efc.bucket_of(code) == "unknown"
 

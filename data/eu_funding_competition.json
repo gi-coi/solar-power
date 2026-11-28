@@ -16,14 +16,16 @@
       "comp-tend",
       "neg-w-call",
       "open",
-      "oth-mult",
       "restricted"
     ],
     "noncompetitive_codes": [
-      "neg-wo-call",
+      "neg-wo-call"
+    ],
+    "unknown_codes": [
+      "oth-mult",
       "oth-single"
     ],
-    "competitive_denominator": "competitive + noncompetitive; unknown excluded",
+    "competitive_denominator": "competitive + noncompetitive; unknown (NaN and undefined codes oth-single/oth-mult) excluded",
     "greece_code_note": "Greece appears as 'GR' in the data; mapped to 'EL'.",
     "non_eu_countries_excluded": [
       "BO",
@@ -252,19 +254,19 @@
       "competition": {
         "notice": {
           "competitive_n": 456,
-          "noncompetitive_n": 29,
-          "unknown_n": 77,
-          "known_n": 485,
-          "competitive_pct": 94.0,
-          "noncompetitive_pct": 6.0
+          "noncompetitive_n": 2,
+          "unknown_n": 104,
+          "known_n": 458,
+          "competitive_pct": 99.6,
+          "noncompetitive_pct": 0.4
         },
         "award": {
           "competitive_n": 566,
-          "noncompetitive_n": 33,
-          "unknown_n": 94,
-          "known_n": 599,
-          "competitive_pct": 94.5,
-          "noncompetitive_pct": 5.5
+          "noncompetitive_n": 2,
+          "unknown_n": 125,
+          "known_n": 568,
+          "competitive_pct": 99.6,
+          "noncompetitive_pct": 0.4
         }
       }
     },
@@ -404,19 +406,19 @@
       "competition": {
         "notice": {
           "competitive_n": 61,
-          "noncompetitive_n": 4,
-          "unknown_n": 0,
-          "known_n": 65,
-          "competitive_pct": 93.8,
-          "noncompetitive_pct": 6.2
+          "noncompetitive_n": 3,
+          "unknown_n": 1,
+          "known_n": 64,
+          "competitive_pct": 95.3,
+          "noncompetitive_pct": 4.7
         },
         "award": {
           "competitive_n": 105,
-          "noncompetitive_n": 4,
-          "unknown_n": 0,
-          "known_n": 109,
-          "competitive_pct": 96.3,
-          "noncompetitive_pct": 3.7
+          "noncompetitive_n": 3,
+          "unknown_n": 1,
+          "known_n": 108,
+          "competitive_pct": 97.2,
+          "noncompetitive_pct": 2.8
         }
       }
     },
@@ -479,18 +481,18 @@
       },
       "competition": {
         "notice": {
-          "competitive_n": 41,
+          "competitive_n": 40,
           "noncompetitive_n": 0,
-          "unknown_n": 4,
-          "known_n": 41,
+          "unknown_n": 5,
+          "known_n": 40,
           "competitive_pct": 100.0,
           "noncompetitive_pct": 0.0
         },
         "award": {
-          "competitive_n": 43,
+          "competitive_n": 42,
           "noncompetitive_n": 0,
-          "unknown_n": 4,
-          "known_n": 43,
+          "unknown_n": 5,
+          "known_n": 42,
           "competitive_pct": 100.0,
           "noncompetitive_pct": 0.0
         }
@@ -821,18 +823,18 @@
       },
       "competition": {
         "notice": {
-          "competitive_n": 1265,
+          "competitive_n": 1264,
           "noncompetitive_n": 8,
-          "unknown_n": 30,
-          "known_n": 1273,
+          "unknown_n": 31,
+          "known_n": 1272,
           "competitive_pct": 99.4,
           "noncompetitive_pct": 0.6
         },
         "award": {
-          "competitive_n": 1859,
+          "competitive_n": 1858,
           "noncompetitive_n": 14,
-          "unknown_n": 44,
-          "known_n": 1873,
+          "unknown_n": 45,
+          "known_n": 1872,
           "competitive_pct": 99.3,
           "noncompetitive_pct": 0.7
         }
@@ -1011,18 +1013,18 @@
       },
       "competition": {
         "notice": {
-          "competitive_n": 179,
+          "competitive_n": 178,
           "noncompetitive_n": 5,
-          "unknown_n": 16,
-          "known_n": 184,
+          "unknown_n": 17,
+          "known_n": 183,
           "competitive_pct": 97.3,
           "noncompetitive_pct": 2.7
         },
         "award": {
-          "competitive_n": 311,
+          "competitive_n": 310,
           "noncompetitive_n": 6,
-          "unknown_n": 59,
-          "known_n": 317,
+          "unknown_n": 60,
+          "known_n": 316,
           "competitive_pct": 98.1,
           "noncompetitive_pct": 1.9
         }
@@ -1049,18 +1051,18 @@
       },
       "competition": {
         "notice": {
-          "competitive_n": 11,
+          "competitive_n": 9,
           "noncompetitive_n": 0,
-          "unknown_n": 0,
-          "known_n": 11,
+          "unknown_n": 2,
+          "known_n": 9,
           "competitive_pct": 100.0,
           "noncompetitive_pct": 0.0
         },
         "award": {
-          "competitive_n": 16,
+          "competitive_n": 14,
           "noncompetitive_n": 0,
-          "unknown_n": 0,
-          "known_n": 16,
+          "unknown_n": 2,
+          "known_n": 14,
           "competitive_pct": 100.0,
           "noncompetitive_pct": 0.0
         }

@@ -23,8 +23,8 @@ EU27 = [
 ]
 ALIAS = {"GR": "EL"}  # Greece is recorded as "GR" in the data; EU-27 uses "EL".
 
-COMPETITIVE = {"open", "restricted", "neg-w-call", "comp-dial", "comp-tend", "oth-mult"}
-NONCOMPETITIVE = {"neg-wo-call", "oth-single"}
+COMPETITIVE = {"open", "restricted", "neg-w-call", "comp-dial", "comp-tend"}
+NONCOMPETITIVE = {"neg-wo-call"}
 
 
 def classify(code: object) -> str:

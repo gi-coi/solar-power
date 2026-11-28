@@ -17,6 +17,14 @@ originally downloaded; (2) the report's **overall "headline" share is computed
 over ALL countries, not the EU-27**, a scope inconsistency worth fixing before
 publication (details in Stage 8.2).
 
+**Update (2026-11-28):** after this check, `oth-single` and `oth-mult` were
+reclassified out of the competitive/non-competitive split and into **unknown**
+(excluded from the denominator), because the `procurement-procedure-type`
+codelist gives them no definition (see `ted-fields-reference.md` §4). This
+changes the competitive/non-competitive figures in §8.2 below and the per-country
+`competition` values in the JSON; the EU-funding figures are unaffected. The
+pytest suite was updated in lockstep and still passes (37 tests).
+
 ---
 
 ## Stage 1 — Provenance (skill §1)
@@ -292,20 +300,20 @@ CSV; award/contract IDs appear as text *with* thousands separators, e.g.
 `9,350,663`). For each award below, find its row(s) and confirm the
 `Eu Funded`, `Procedure Type Code` and `Buyer Country` columns match exactly:
 
-| Award ID (CSV text) | Contract ID (CSV text) | Doc ID | Buyer Country | Eu Funded | Procedure Type Code |
-|---|---|---|---|---|---|
-| 9,350,663 | 2,863,028 | 00602221-2025 | CZ | true | open |
-| 1,562,383 | 709,618 | 076019-2016 | NL | false | restricted |
-| 9,529,199 | 2,914,843 | 00713486-2025 | DE | false | neg-wo-call |
-| 2,338,286 | 1,063,994 | 351336-2018 | SE | false | neg-w-call |
-| 8,241,442 | 2,553,531 | 00729722-2024 | CZ | false | oth-single |
-| 8,391,819 | 2,601,963 | 00024003-2025 | CZ | false | comp-dial |
-| 7,233,794 | 2,265,658 | 00056636-2024 | RO | false | comp-tend |
-| 9,825,640 | 3,008,054 | 00027139-2026 | PL | false | oth-mult |
-| 8,363,261 | 2,592,193 | 00006377-2025 | SI | true | *(empty)* |
-| 8,314,313 | 2,576,606 | 00775573-2024 | PT | true | open |
-| 1,113,832 | 509,323 | 356984-2014 | GB | false | restricted |
-| 7,415,639 | 2,312,005 | 00172009-2024 | GR | true | open |
+| Award ID (CSV text) | Contract ID (CSV text) | Doc ID        | Buyer Country | Eu Funded | Procedure Type Code |
+| ------------------- | ---------------------- | ------------- | ------------- | --------- | ------------------- |
+| 9,350,663           | 2,863,028              | 00602221-2025 | CZ            | true      | open                |
+| 1,562,383           | 709,618                | 076019-2016   | NL            | false     | restricted          |
+| 9,529,199           | 2,914,843              | 00713486-2025 | DE            | false     | neg-wo-call         |
+| 2,338,286           | 1,063,994              | 351336-2018   | SE            | false     | neg-w-call          |
+| 8,241,442           | 2,553,531              | 00729722-2024 | CZ            | false     | oth-single          |
+| 8,391,819           | 2,601,963              | 00024003-2025 | CZ            | false     | comp-dial           |
+| 7,233,794           | 2,265,658              | 00056636-2024 | RO            | false     | comp-tend           |
+| 9,825,640           | 3,008,054              | 00027139-2026 | PL            | false     | oth-mult            |
+| 8,363,261           | 2,592,193              | 00006377-2025 | SI            | true      | *(empty)*           |
+| 8,314,313           | 2,576,606              | 00775573-2024 | PT            | true      | open                |
+| 1,113,832           | 509,323                | 356984-2014   | GB            | false     | restricted          |
+| 7,415,639           | 2,312,005              | 00172009-2024 | GR            | true      | open                |
 
 Note award `8,363,261` should have an **empty** `Procedure Type Code`, and
 `7,415,639` shows Greece recorded as **GR** (mapped to `EL` in the output).

@@ -93,13 +93,14 @@ This describes the **procurement procedure** used. In eForms the field is **`BT-
 
 - The **codelist** above is authoritative and lists *procedure types* (10 codes and their labels). It contains **no "competitive / non-competitive" flag** — that split is **not** a codelist field; it is an *analytical* convention we apply for this project.
 - Our **aggregation** (`scripts/eu_funding_competition.py`) buckets:
-  - **competitive** = `open`, `restricted`, `neg-w-call`, `comp-dial`, `comp-tend`, `oth-mult`
-  - **non-competitive** = `neg-wo-call`, `oth-single`
+  - **competitive** = `open`, `restricted`, `neg-w-call`, `comp-dial`, `comp-tend`
+  - **non-competitive** = `neg-wo-call`
+  - **unknown / excluded** = `oth-single`, `oth-mult` (and any missing value) — excluded from the competitive denominator
 
 **Judgment calls in that rule:**
 - `neg-w-call` → competitive follows the **"prior call ⇒ competitive"** convention: its label is literally "negotiated **with prior publication of a call for competition** / competitive with negotiation", and the OCDS-for-eForms mapping assigns it to OCDS `selective` ("Only qualified suppliers are invited to submit a tender").
 - `neg-wo-call` → non-competitive: "negotiated **without prior** call for competition"; the OCDS-for-eForms mapping assigns it to OCDS `limited` ("The procuring entity contacts a number of suppliers of its choice"), i.e. a direct award.
-- `oth-single` / `oth-mult` are **genuinely vague** in the codelist ("other single / multiple stage procedure", with no definition). Assigning `oth-mult` → competitive and `oth-single` → non-competitive is *our* choice (single-stage ≈ no separate shortlisting/selection stage); the codelist does not state it.
+- `oth-single` / `oth-mult` are **genuinely vague** in the codelist ("other single / multiple stage procedure", with no definition, and absent from the OCDS-for-eForms mapping). Because there is no authoritative basis to call them competitive or non-competitive, we **exclude them as "unknown"** rather than guess.
 
 **Interpretation:** a solar award with `neg-wo-call` is a *direct award* (no open competition), whereas `open` means a fully competitive tender. `neg-wo-call` awards are common for small, urgent, or sole-supplier solar work and typically show very few or zero competing tenders.
 
