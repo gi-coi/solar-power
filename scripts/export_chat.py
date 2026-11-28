@@ -1,8 +1,9 @@
 """Export an OpenCode session transcript as JSON for `agent-chats/`.
 
 Reads the local OpenCode SQLite database and reconstructs a transcript of
-user + assistant messages only. System updates, idle markers and internal
-reasoning are omitted; tool calls are reduced to their names.
+user + assistant messages only. System updates and idle markers are omitted;
+tool calls are reduced to their names, and the assistant's internal reasoning
+("thinking") is captured in a `thinking` field on each assistant message.
 
 Only messages up to and including the most recent *user* message are captured,
 so the export's own tool activity is not included in the transcript.
@@ -62,17 +63,22 @@ def load(session_id: str) -> dict:
         ).fetchall()
 
         text_parts = []
+        thinking_parts = []
         tool_names = []
         for p in parts:
             pd = json.loads(p["data"])
             if p["type"] == "text":
                 text_parts.append(pd.get("text", ""))
+            elif p["type"] == "reasoning":
+                thinking_parts.append(pd.get("text", ""))
             elif p["type"] == "tool":
                 tool_names.append(pd.get("name", ""))
 
         entry = {"role": "assistant"}
         if text_parts:
             entry["content"] = "\n".join(text_parts)
+        if thinking_parts:
+            entry["thinking"] = "\n".join(thinking_parts)
         if tool_names:
             entry["tool_calls"] = tool_names
         messages.append(entry)
@@ -82,7 +88,7 @@ def load(session_id: str) -> dict:
         "session": session_id,
         "title": title,
         "exported_at": datetime.now(timezone.utc).isoformat(),
-        "note": "Transcript of user and assistant messages only; system updates and internal reasoning omitted.",
+        "note": "Transcript of user and assistant messages only; system updates and idle markers omitted. Assistant 'thinking' holds internal reasoning.",
         "messages": messages,
     }
 
