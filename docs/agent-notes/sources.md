@@ -94,4 +94,28 @@ Running log of every data source used — URL, publisher, access date, and what 
 | 82 | EPBD recast text | https://eur-lex.europa.eu/eli/dir/2024/1275/oj/eng | European Commission (EUR-Lex) | Directive (EU) 2024/1275 Art. 10 "Solar energy in buildings" — exact thresholds/deadlines (existing public buildings >2,000/>750/>250 m² by end-2027/2028/2030) |
 | 83 | RRF Regulation | https://eur-lex.europa.eu/eli/reg/2021/241/oj/eng | European Commission (EUR-Lex) | Regulation (EU) 2021/241 — DNSH (Art. 5 + horizontal principles); state-aid & public-procurement compliance obligation |
 
-> Access date for entries **#78–#83**: **2026-11-28** (entries #1–#77 above: 2026-11-25).
+| 84 | RRF clean energy | https://energy.ec.europa.eu/topics/funding-and-financing/recovery-and-resilience-facility-clean-energy_en | European Commission (DG ENER) | RRF €577bn committed / €400bn disbursed; energy ≈€153.8bn (27%); renewables ≈€26.4bn; buildings efficiency ≈€75.4bn; grids/storage ≈€24.6bn; Italy/Spain/Poland largest renewables |
+| 85 | REPowerEU audit | https://www.eca.europa.eu/en/publications/sr-2026-21 | European Court of Auditors | SR 21/2026: REPowerEU chapters €54.3bn of ~€300bn; renewables short of 103 GW; "minor role"; governance gaps |
+| 86 | REPowerEU audit (annexes) | https://www.eca.europa.eu/ECAPublications/SR-2026-21/SR-2026-21_EN.pdf | European Court of Auditors | Annex II full REPowerEU-chapter allocation table (Poland €24.5bn/37.8%, Italy €11.2bn/17.1%, Spain €6.9bn/10.6%…) |
+| 87 | REPowerEU audit summary | https://www.euinsider.eu/news/eca-repowereu-stalled-russian-lng-imports-rise-2026 | EU Insider (EPIC) | SR 21/2026 summary: €54.3bn committed, 103 GW shortfall, Kozlovs quotes |
+| 88 | EU funding energy sector | https://energy.ec.europa.eu/topics/funding-and-financing/eu-funding-possibilities-energy-sector_en | European Commission (DG ENER) | Cohesion €43.7bn energy priorities; CEF Energy €5.8bn; LIFE CET €1bn; Innovation Fund ~€40bn; InvestEU €397bn mobilised |
+| 89 | Modernisation Fund | https://climate.ec.europa.eu/areas-action/eu-funding-climate-action/modernisation-fund_en | European Commission | MF: 13 beneficiary MS; allowance-share table (Poland 43.41% first category) |
+| 90 | Modernisation Fund investments | https://www.modernisationfund.eu/investments-2/ | Modernisation Fund / EIB | €23.2bn disbursed; 345 investment proposals |
+| 91 | Modernisation Fund round | https://www.modernisationfund.eu/joint-press-release-e2-5-billion-of-eu-ets-revenues-invested-in-cleaner-energy-systems-in-11-eu-countries/ | Modernisation Fund / EIB / Commission | €2.5bn round to 51 projects; country breakdown (Czechia €516.8m, Romania €636.9m, Hungary €552.3m…) |
+| 92 | Romania MF solar calls | https://momentumenergy.ro/en/insights/romania-modernisation-fund-guide/ | Momentum Energy | Romania MF solar calls (€415m/€400m/€310.7m/€500m public-entities solar+storage); CfD 1.53+2.75 GW |
+| 93 | Innovation Fund projects | https://climate.ec.europa.eu/areas-action/eu-funding-climate-action/innovation-fund/innovation-fund-projects_en | European Commission / CINEA | Solar awards: MOD4PV (Spain, 1.5 GW HJT), SOLAR4EU (France), WATTRAXIS (France floating PV) |
+| 94 | Innovation Fund 2023 | https://renewablesnow.com/news/eu-allocates-eur-4-8bn-among-85-innovative-net-zero-projects-872144/ | Renewables Now | IF 2023 call: €4.8bn to 85 projects |
+| 95 | Innovation Fund 2025 | https://evolutioneurope.eu/blog/innovation-fund-2025-results/ | Evolution Europe | IF25 NZT: 77 projects, €3.4bn |
+| 96 | Just Transition Fund | https://commission.europa.eu/funding-and-tenders/find-funding/eu-funding-programmes/just-transition-fund_en | European Commission | JTF €19.32bn (€19.7bn incl. transfers) |
+| 97 | RENEWFM | https://energy.ec.europa.eu/topics/renewable-energy/renewable-energy-directive-rules-and-financing/eu-renewable-energy-financing-mechanism_en | European Commission / CINEA | RENEWFM cross-border tenders: €27.5m (Finland 283 MW), €46m (FI/EE 386 MW), €54.9m (BG/FI) |
+| 98 | CEF cross-border RES | https://www.eubusiness.com/energy/126m-eu-funding-for-cross-border-renewable-energy-projects/ | EUbusiness | ~€126m CEF for 3 cross-border renewables projects |
+| 99 | FSR Romania (Breton) | https://ec.europa.eu/commission/presscorner/detail/en/statement_24_2570 | European Commission | Rovinari 454.97 MW (~€375m, partly EU-funded): LONGi/ENEVO + Shanghai Electric withdrew under FSR probe |
+| 100 | REPowerEU | https://commission.europa.eu/topics/energy/repowereu_en | European Commission | REPowerEU grants ~€20bn; RRF at heart |
+| 101 | Kohesio | https://kohesio.ec.europa.eu/ | European Commission (DG REGIO) | Cohesion projects + beneficiaries: 1.5m projects, ~500k beneficiaries |
+| 102 | Cohesion open data | https://data.europa.eu/en/news-events/news/cohesion-open-data-platform | data.europa.eu | Cohesion Open Data Platform: 150 programmes, >€110bn EU financing |
+| 103 | RRF vs Cohesion renewables | https://www.mdpi.com/2227-7072/14/7/191 | MDPI Economies (D. Nigohosyan, 2026) | CPF €367bn with ~€8bn renewables vs RRF ~€26.4bn; Poland RRF 92.9% wind |
+| 104 | EU solar subsidy landscape | https://www.dw.com/en/how-europe-is-paying-for-its-solar-boom/a-71640144 | Deutsche Welle / EDJ | Solar subsidies (VAT cuts, rebates, loans); rooftop ~25% of EU capacity; 800k jobs; Hungary 2/3 cost cover |
+| 105 | EPRS energy-transition funding | https://www.europarl.europa.eu/RegData/etudes/BRIE/2026/789390/EPRS_BRI(2026)789390_EN.pdf | European Parliament (EPRS) | Overview of EU energy funding: LIFE CET, InvestEU €26.2bn guarantee, JTF mobilisation €10–15bn |
+| 106 | Innovation Fund AKSR | https://op.europa.eu/webpub/clima/innovation-fund-2025/en/ | Publications Office / CINEA | Innovation Fund 2025 AKSR: €7.1bn committed, 36 projects at financial close |
+
+> Access date for entries **#78–#106**: **2026-11-28** (entries #1–#77 above: 2026-11-25).

@@ -73,3 +73,34 @@ Computed by `scripts/eu_funding_competition.py`.
 - **(c) "EU funded" is a buyer self-declaration** (TED field `BT-60`), not a verified funding record.
 - **(d) Primary unit = the notice** (de-duplicated on `Contract ID`), with the award level kept as a secondary/sensitivity measure. **Reason:** both flags are notice-level, so we cannot prove an individual award is genuinely EU-funded rather than merely inheriting the flag from its parent notice — counting awards would risk overstating EU funding for multi-lot frameworks (e.g. GB: 50 notices but 127 awards). Award-level figures are reported alongside for transparency but are not the headline.
 - **(e) `oth-single`/`oth-mult` reclassified to unknown (2026-11-28).** The `procurement-procedure-type` codelist gives these two codes no definition, so rather than guess competitive vs non-competitive we exclude them from the split. Competitive is now `open`/`restricted`/`neg-w-call`/`comp-dial`/`comp-tend`; non-competitive is `neg-wo-call` only.
+
+## EU funding & beneficiaries research (2026-11-28)
+
+Unresolved points from the funding/beneficiary research note
+(`eu-funding-solar-tenders.md`). Sources numbered #84+ in `sources.md`.
+
+- **No solar-specific Cohesion figure.** DG ENER gives €43.7bn for *all* cohesion
+  "energy priorities" (2021–2027); the renewables-only ERDF/CF figure (~€8bn) comes from
+  a single academic paper (Nigohosyan 2026, source #103) quoting the Scoreboard/Cohesion
+  platform, and could not be confirmed against a primary Commission table. The
+  *solar-only* share is not published anywhere we found.
+- **Grant-vs-tender split unknown.** How much EU-funded solar money reaches TED-published
+  public procurement (vs. household/firm grants and CfD auctions) is not quantified by
+  any primary source. Our TED "EU-funded" flag (BT-60) is a buyer self-declaration, so it
+  cannot be used to size this split.
+- **"Who wins" is unquantified.** No TED-derived ranking of companies winning EU-funded
+  solar tenders exists — the ECA-flagged missing common supplier ID (SR 28/2023) blocks
+  ownership/cross-border analysis. Company names (Ameresco/Sunel, GES, LONGi, Shanghai
+  Electric, inverter vendors) are illustrative, not a systematic beneficiary list.
+- **Modernisation Fund solar share.** The €23.2bn total disbursement is firm (portal);
+  the solar-specific share is only visible through individual national calls (e.g.
+  Romania's €500m public-entities solar+storage call) and is not summed EU-wide.
+- **Innovation Fund exact solar € total.** €4.8bn (2023) / €3.4bn (2025) / €7.1bn
+  committed are call-level totals, not solar-only; the three named solar projects are a
+  sample of the project list, not an exhaustive solar tally.
+- **ECA SR 21/2026 allocation table currency/dates.** Annex II figures (Oct 2025, in
+  euro) come from the PDF annexes; the report body uses slightly different rounding
+  (€54.3bn committed). Treat Poland €24.5bn/37.8% as the headline but note grants/loans
+  mix varies by member state.
+- **Secondary sources for 2025–2026 IF/LIFE round figures** (Renewables Now, Evolution
+  Europe, EUbusiness) were not checked against CINEA's official award announcements.
