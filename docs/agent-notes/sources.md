@@ -86,3 +86,9 @@ Running log of every data source used — URL, publisher, access date, and what 
 | 75 | SPE procurement | https://solarpowereurope.org/advocacy/position-papers/public-procurement-to-support-european-solar | SolarPower Europe | Position: sustainability/resilience criteria in public procurement |
 | 76 | OECD toolkit | https://www.oecd.org/… | OECD | Diagnostic toolkit: regulatory barriers to solar/wind/hydro |
 | 77 | Covenant of Mayors | https://eu-mayors.ec.europa.eu/… | Covenant of Mayors | Green public procurement for local renewables |
+| 78 | Procedure type | https://docs.ted.europa.eu/eforms/latest/reference/code-lists/procurement-procedure-type.html | Publications Office of the EU (TED eForms SDK) | Authoritative `procurement-procedure-type` codelist (v20250924-0): code + label for all 10 codes — open, restricted, neg-w-call, neg-wo-call, comp-dial, comp-tend, innovation, oth-single, oth-mult, exp-int-rail |
+| 79 | Procedure type | https://standard.open-contracting.org/profiles/eforms/latest/en/codelists/procurement-procedure-type/ | Open Contracting Partnership (OCDS for eForms) | Quoted eForms descriptions for the 8 substantive procedure-type codes + their OCDS mapping (open/selective/limited); `oth-single`/`oth-mult` are absent |
+| 80 | Procedure type | https://docs.ted.europa.eu/eforms/latest/schema/procedure-lot-part-information.html | Publications Office of the EU (TED eForms SDK) | BT-105 "Procedure Type" definition — procedure-level, cardinality 1, `cbc:ProcedureCode`; per-notice-subtype procedure-type tables |
+| 81 | Procedure type | https://docs.peppol.eu/pracc/transactions/T011/index.html | OpenPEPPOL (Pre-Award) | Confirms the procedure-type listID is the EU Publications Office authority table `procurement-procedure-type` (Issuer: Publications Office); T011 `ProcedureType` search slot |
+
+> Access date for entries **#78–#81**: **2026-11-28** (entries #1–#77 above: 2026-11-25).

@@ -72,19 +72,34 @@ In the official CSV subset the values are the words `works`, `supplies`, `servic
 
 ## 4. Procedure Type Code ("open", "neg-wo-call", …)
 
-This describes the **procurement procedure** used (eForms `BT-105`; the `procurement-procedure-type` codelist). Common codes and their meanings:
+This describes the **procurement procedure** used. In eForms the field is **`BT-105`** (`cbc:ProcedureCode`, list name `procurement-procedure-type`). The authoritative code + label set is the TED eForms SDK [`procurement-procedure-type` codelist](https://docs.ted.europa.eu/eforms/latest/reference/code-lists/procurement-procedure-type.html) (version 20250924-0, accessed 2026-11-28), issued by the Publications Office as the EU Vocabularies authority table `http://publications.europa.eu/resource/authority/procurement-procedure-type`. The quoted descriptions below come from the OCDS for eForms profile's [`procurement-procedure-type` codelist mapping](https://standard.open-contracting.org/profiles/eforms/latest/en/codelists/procurement-procedure-type/) (accessed 2026-11-28).
 
-| Code | Full name / meaning |
-|---|---|
-| `open` | **Open procedure** — any interested economic operator may submit a tender directly (no pre-qualification). |
-| `restricted` | **Restricted procedure** — anyone may ask to participate, but only pre-selected (qualified) candidates are invited to tender. |
-| `neg-w-call` | **Negotiated procedure with prior call for competition** — a call is published first, then the authority negotiates with selected candidates. |
-| `neg-wo-call` | **Negotiated procedure without prior call for competition** — no competitive call; a form of **direct award**, allowed only in specific cases (no tenders received, single possible supplier, extreme urgency, etc.). Often maps to the OCDS notion of "limited"/direct. |
-| `comp-dial` | **Competitive dialogue** — for complex contracts; dialogue with selected candidates before tenders. |
-| `comp-tend` | **Competitive procedure with negotiation** / competitive tendering — allows negotiation under defined rules. |
-| `innovation` | **Innovation partnership** — for developing innovative solutions. |
-| `oth-single` / `oth-mult` | **Other single-stage / other multi-stage** procedure. |
-| `exp-int-rail` | Expression of interest / public service contract for rail transport (Regulation 1370/2007) — unlikely in solar. |
+| Code | Authoritative label (TED SDK codelist) | Description (OCDS-for-eForms, quoted) |
+|---|---|---|
+| `open` | Open | "In open procedures any interested economic operator may submit a tender in response to a call for competition." |
+| `restricted` | Restricted | "In restricted procedures, any economic operator may submit a request to participate in response to a call for competition by providing the information for qualitative selection that is requested by the contracting entity." |
+| `neg-w-call` | Negotiated with prior publication of a call for competition / competitive with negotiation | "In negotiated procedures with prior call for competition, any economic operator may submit a request to participate in response to a call for competition by providing the information for qualitative selection that is requested by the contracting entity." |
+| `neg-wo-call` | Negotiated without prior call for competition | "Contracting entities may use a negotiated procedure without prior call for competition in the following cases: Based on Directive 2014/25/EU, Article 50: (a) where no tenders or no suitable tenders or no requests to participate or no suitable requests to participate have been submitted […]; (b) where a contract is purely for the purpose of research, experiment, study or development […]; (c) where the works, supplies or services can be supplied only by a particular economic operator […]; (d) … extreme urgency …; (e) … additional deliveries by the original supplier …; (f) … repetition of similar works or services …; (g) supplies quoted and purchased on a commodity market; (h) bargain purchases …; (i) … particularly advantageous conditions …; (j) … follows a design contest …; OR Based on Regulation (EC) No 1370/2007, Article 5." |
+| `comp-dial` | Competitive dialogue | "In competitive dialogues, any economic operator may submit a request to participate in response to a call for competition in accordance with points (b) and (c) of Article 44(4) by providing the information for qualitative selection that is requested by the contracting entity." |
+| `comp-tend` | Competitive tendering (article 5(3) of Regulation 1370/2007) | "A competitive tendering procedure is open to any interested economic operator, is fair and observes the principles of transparency and non-discrimination. Such a procedure does not rule out negotiations (in order to determine how best to meet specific or complex requirements) provided they comply with the same principles." |
+| `innovation` | Innovation partnership | "In innovation partnerships, any economic operator may submit a request to participate in response to a call for competition in accordance with points (b) and (c) of Article 44(4) by providing the information for qualitative selection that is requested by the contracting entity." |
+| `oth-single` | Other single stage procedure | *No description — the codelist gives only this terse label, and the code is absent from the OCDS-for-eForms mapping.* |
+| `oth-mult` | Other multiple stage procedure | *No description — the codelist gives only this terse label, and the code is absent from the OCDS-for-eForms mapping.* |
+| `exp-int-rail` | Request for expression of interest – only for rail (article 5(3b) of Regulation 1370/2007) | "Based on Article 5(3b) of Regulation (EC) No 1370/2007, competent authorities may make public their intentions to award a public service contract for public passenger transport services by rail by publishing an information notice in the Official Journal of the European Union." |
+
+**Field level (BT-105).** Procedure-level, **cardinality 1** (mandatory and unique): "It is marked for the whole Procedure with the `cbc:ProcedureCode` element" ([TED eForms schema, "Procedure Type (BT-105)"](https://docs.ted.europa.eu/eforms/latest/schema/procedure-lot-part-information.html), accessed 2026-11-28). It is *not* repeated per lot/part, so it is constant across every award in a notice.
+
+**Codelist vs. competitive/non-competitive aggregation — two distinct things:**
+
+- The **codelist** above is authoritative and lists *procedure types* (10 codes and their labels). It contains **no "competitive / non-competitive" flag** — that split is **not** a codelist field; it is an *analytical* convention we apply for this project.
+- Our **aggregation** (`scripts/eu_funding_competition.py`) buckets:
+  - **competitive** = `open`, `restricted`, `neg-w-call`, `comp-dial`, `comp-tend`, `oth-mult`
+  - **non-competitive** = `neg-wo-call`, `oth-single`
+
+**Judgment calls in that rule:**
+- `neg-w-call` → competitive follows the **"prior call ⇒ competitive"** convention: its label is literally "negotiated **with prior publication of a call for competition** / competitive with negotiation", and the OCDS-for-eForms mapping assigns it to OCDS `selective` ("Only qualified suppliers are invited to submit a tender").
+- `neg-wo-call` → non-competitive: "negotiated **without prior** call for competition"; the OCDS-for-eForms mapping assigns it to OCDS `limited` ("The procuring entity contacts a number of suppliers of its choice"), i.e. a direct award.
+- `oth-single` / `oth-mult` are **genuinely vague** in the codelist ("other single / multiple stage procedure", with no definition). Assigning `oth-mult` → competitive and `oth-single` → non-competitive is *our* choice (single-stage ≈ no separate shortlisting/selection stage); the codelist does not state it.
 
 **Interpretation:** a solar award with `neg-wo-call` is a *direct award* (no open competition), whereas `open` means a fully competitive tender. `neg-wo-call` awards are common for small, urgent, or sole-supplier solar work and typically show very few or zero competing tenders.
 
